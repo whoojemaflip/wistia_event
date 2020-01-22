@@ -9,7 +9,7 @@ require "action_controller/railtie"
 # require "rails/test_unit/railtie"
 
 # Bundler.require(*Rails.groups)
-require 'mandrill_event'
+require 'zoom_event'
 
 module Dummy
   class Application < Rails::Application
@@ -28,4 +28,3 @@ module Dummy
     # config.i18n.default_locale = :de
   end
 end
-

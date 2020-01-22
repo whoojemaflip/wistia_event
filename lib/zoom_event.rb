@@ -1,9 +1,9 @@
 require 'active_support/notifications'
-require 'mandrill_event/version'
-require 'mandrill_event/engine' if defined?(Rails)
+require 'zoom_event/version'
+require 'zoom_event/engine' if defined?(Rails)
 require 'json'
 
-module MandrillEvent
+module ZoomEvent
 
   class << self
     attr_accessor :adapter, :backend, :namespace
@@ -14,7 +14,7 @@ module MandrillEvent
     end
 
     def process(params)
-      JSON.parse(params['mandrill_events'] || '[]').each do |event_params|
+      JSON.parse(params['zoom_events'] || '[]').each do |event_params|
         instrument(event_params)
       end
     end
@@ -55,6 +55,6 @@ module MandrillEvent
 
   self.adapter = NotificationAdapter
   self.backend = ActiveSupport::Notifications
-  self.namespace = Namespace.new('mandrill_event', '.')
+  self.namespace = Namespace.new('zoom_event', '.')
 
 end

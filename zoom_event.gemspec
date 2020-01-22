@@ -1,15 +1,15 @@
 $:.push File.expand_path('lib', __dir__)
 
-require 'mandrill_event/version'
+require 'zoom_event/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'mandrill_event'
-  spec.version     = MandrillEvent::VERSION
-  spec.authors     = ['Weston Triemstra']
-  spec.email       = ['weston@netsign.com']
-  spec.homepage    = 'https://github.com/netsign/mandrill_event'
-  spec.summary     = 'Mandrill webhook integration for Rails.'
-  spec.description = 'Mandrill webhook integration for Rails.'
+  spec.name        = 'zoom_event'
+  spec.version     = ZoomEvent::VERSION
+  spec.authors     = ['Tom Gladhill', 'Weston Triemstra']
+  spec.email       = ['tom@netsign.com', 'weston@netsign.com']
+  spec.homepage    = 'https://github.com/whoojemaflip/zoom_event'
+  spec.summary     = 'Zoom webhook integration for Rails.'
+  spec.description = 'Zoom webhook integration for Rails.'
   spec.license     = 'MIT'
 
   spec.files         = Dir['{app,config,lib}/**/*', 'LICENSE.md', 'README.md']

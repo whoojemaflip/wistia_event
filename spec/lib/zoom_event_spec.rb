@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe MandrillEvent do
+RSpec.describe ZoomEvent do
   let(:events) { [] }
   let(:subscriber) { ->(evt) { events << evt } }
   let(:reject_event) { double('reject') }
@@ -8,22 +8,22 @@ RSpec.describe MandrillEvent do
   describe '.configure' do
     it 'yields itself to the block' do
       yielded = nil
-      MandrillEvent.configure { |events| yielded = events }
-      expect(yielded).to eq MandrillEvent
+      ZoomEvent.configure { |events| yielded = events }
+      expect(yielded).to eq ZoomEvent
     end
 
     it 'requires a block argument' do
-      expect { MandrillEvent.configure }.to raise_error ArgumentError
+      expect { ZoomEvent.configure }.to raise_error ArgumentError
     end
   end
 
   describe '.process' do
     let(:json) { webhook_example_events('rejects') }
-    let(:params) { {'mandrill_events' =>  json} }
+    let(:params) { {'zoom_events' =>  json} }
 
     it 'calls instrument for each event' do
-      MandrillEvent.subscribe('reject', subscriber)
-      MandrillEvent.process(params)
+      ZoomEvent.subscribe('reject', subscriber)
+      ZoomEvent.process(params)
       expect(events).to eq JSON.parse(json)
     end
   end
@@ -35,9 +35,9 @@ RSpec.describe MandrillEvent do
 
     context 'with a subscriber that responds to #call' do
       it 'calls the subscriber with the event' do
-        MandrillEvent.subscribe('reject', subscriber)
+        ZoomEvent.subscribe('reject', subscriber)
         expect(subscriber).to receive(:call).with(reject_event)
-        MandrillEvent.instrument(reject_event)
+        ZoomEvent.instrument(reject_event)
       end
     end
   end

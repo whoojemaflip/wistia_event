@@ -1,3 +1,3 @@
-MandrillEvent::Engine.routes.draw do
+ZoomEvent::Engine.routes.draw do
   resources :events, only: [:index, :create]
 end

@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in mandrill_event.gemspec
+# Specify your gem's dependencies in zoom_event.gemspec
 gemspec

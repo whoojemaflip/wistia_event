@@ -1,5 +1,5 @@
-require 'mandrill_event/engine'
+require 'zoom_event/engine'
 
 Rails.application.routes.draw do
-  mount MandrillEvent::Engine => '/mandrill'
+  mount ZoomEvent::Engine => '/zoom'
 end

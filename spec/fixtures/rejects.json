@@ -4,8 +4,8 @@
       "msg":{
          "ts":1365109999,
          "subject":"This an example webhook message",
-         "email":"example.webhook@mandrillapp.com",
-         "sender":"example.sender@mandrillapp.com",
+         "email":"example.webhook@zoomapp.com",
+         "sender":"example.sender@zoomapp.com",
          "tags":[
             "webhook-example"
          ],
@@ -30,8 +30,8 @@
       "msg":{
          "ts":1365109999,
          "subject":"This an example webhook message",
-         "email":"example.webhook@mandrillapp.com",
-         "sender":"example.sender@mandrillapp.com",
+         "email":"example.webhook@zoomapp.com",
+         "sender":"example.sender@zoomapp.com",
          "tags":[
             "webhook-example"
          ],
