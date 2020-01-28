@@ -14,13 +14,11 @@ module ZoomEvent
     end
 
     def process(params)
-      JSON.parse(params['zoom_events'] || '[]').each do |event_params|
-        instrument(event_params)
-      end
+      instrument(params['event'], params['payload'])
     end
 
-    def instrument(params)
-      backend.instrument namespace.call(params['event']), params
+    def instrument(event, payload)
+      backend.instrument namespace.call(event), payload
     end
 
     def subscribe(name, callable = Proc.new)

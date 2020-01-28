@@ -7,10 +7,14 @@ module ZoomEvent
     end
 
     def create
-      ZoomEvent.process(params)
+      ZoomEvent.process(permitted_params)
       head :ok
-    # rescue ZoomEvent::UnauthorizedError
-    #   head :unauthorized
+    end
+
+    private
+
+    def permitted_params
+      params.permit(:event, payload: {}).to_h
     end
   end
 end

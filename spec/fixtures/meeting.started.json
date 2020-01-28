@@ -1,0 +1,17 @@
+{
+  "event": "meeting.started",
+  "payload": {
+   "account_id": "e621vkLSSWKGfoS-cH10Aw",
+   "object": {
+     "duration": 0,
+     "start_time": "2020-01-22T03:45:14Z",
+     "timezone": "America/Vancouver",
+     "end_time": "2020-01-22T03:45:19Z",
+     "topic": "Tom Gladhill's Personal Meeting Room",
+     "id": "6282198513",
+     "type": 4,
+     "uuid": "Dh27pp/gR+qnUOP/4NEYFw==",
+     "host_id": "BDyIk6o_R7isYEPL7kegRw"
+   }
+  }
+}

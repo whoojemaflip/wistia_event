@@ -9,7 +9,7 @@ module WebhookRequest
 
   def webhook_example_events(event_type)
     sample_path = fixtures_path.join("#{event_type}.json")
-    sample_path.read
+    JSON.parse(sample_path.read)
   end
 
 end

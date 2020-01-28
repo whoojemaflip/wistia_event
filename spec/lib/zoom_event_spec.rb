@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe ZoomEvent do
   let(:events) { [] }
   let(:subscriber) { ->(evt) { events << evt } }
-  let(:reject_event) { double('reject') }
+  let(:meeting_started_event) { double('meeting.start') }
 
   describe '.configure' do
     it 'yields itself to the block' do
@@ -18,26 +18,22 @@ RSpec.describe ZoomEvent do
   end
 
   describe '.process' do
-    let(:json) { webhook_example_events('rejects') }
-    let(:params) { {'zoom_events' =>  json} }
+    let(:params) { webhook_example_events('meeting.started') }
 
     it 'calls instrument for each event' do
-      ZoomEvent.subscribe('reject', subscriber)
+      ZoomEvent.subscribe('meeting.started', subscriber)
       ZoomEvent.process(params)
-      expect(events).to eq JSON.parse(json)
+      expect(events).to eq [params['payload']]
     end
   end
 
   describe 'subscribing to a specific event type' do
-    before do
-      allow(reject_event).to receive(:[]).with('event').and_return('reject')
-    end
-
     context 'with a subscriber that responds to #call' do
       it 'calls the subscriber with the event' do
-        ZoomEvent.subscribe('reject', subscriber)
-        expect(subscriber).to receive(:call).with(reject_event)
-        ZoomEvent.instrument(reject_event)
+        ZoomEvent.subscribe('meeting.started', subscriber)
+        event = webhook_example_events('meeting.started')
+        expect(subscriber).to receive(:call).with(event['payload'])
+        ZoomEvent.process(event)
       end
     end
   end

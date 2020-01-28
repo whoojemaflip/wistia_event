@@ -14,7 +14,7 @@ RSpec.describe ZoomEvent::EventsController, type: :controller do
 
   context 'with valid event params' do
     describe 'POST create' do
-      let(:params) { {zoom_events: webhook_example_events('rejects')} }
+      let(:params) { {zoom_events: webhook_example_events('meeting.started')} }
 
       it 'returns status 200' do
         post :create, params: params
