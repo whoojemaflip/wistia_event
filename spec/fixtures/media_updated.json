@@ -1,0 +1,24 @@
+{
+  "hook": {
+    "uuid": "bb812395-8d23-4285-9278-9ca014209ae7"
+  },
+  "events": [{
+    "uuid": "09e67f16e673a000",
+    "type": "media.updated",
+    "payload": {
+      "media": {
+        "url": "http://dave.wistia.com/medias/f5diqltruh",
+        "thumbnail": {
+          "url": "http://embed.wistia.com/deliveries/21d23d756f30711e7a5e66815d7d74900515ba29.jpg?image_crop_resized=200x120"
+        },
+        "name": "Cakes on cakes on cakes",
+        "id": "f5diqltruh",
+        "duration": 7.676
+      }
+    },
+    "metadata": {
+      "account_id": "8lq25o0p9c"
+    },
+    "generated_at": "2016-03-30T15:53:15Z"
+  }]
+}

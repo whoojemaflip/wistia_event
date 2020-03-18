@@ -1,4 +1,4 @@
-module ZoomEvent
+module WistiaEvent
   class EventsController < ActionController::Base
     skip_before_action :verify_authenticity_token, raise: false
 
@@ -7,7 +7,7 @@ module ZoomEvent
     end
 
     def create
-      ZoomEvent.process(permitted_params)
+      WistiaEvent.process(permitted_params)
       head :ok
     end
 

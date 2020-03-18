@@ -1,3 +1,3 @@
-ZoomEvent::Engine.routes.draw do
+WistiaEvent::Engine.routes.draw do
   resources :events, only: [:index, :create]
 end

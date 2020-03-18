@@ -9,7 +9,7 @@ require "action_controller/railtie"
 # require "rails/test_unit/railtie"
 
 # Bundler.require(*Rails.groups)
-require 'zoom_event'
+require 'wistia_event'
 
 module Dummy
   class Application < Rails::Application

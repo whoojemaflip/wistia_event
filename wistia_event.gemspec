@@ -1,15 +1,15 @@
 $:.push File.expand_path('lib', __dir__)
 
-require 'zoom_event/version'
+require 'wistia_event/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'zoom_event'
-  spec.version     = ZoomEvent::VERSION
+  spec.name        = 'wistia_event'
+  spec.version     = WistiaEvent::VERSION
   spec.authors     = ['Tom Gladhill', 'Weston Triemstra']
   spec.email       = ['tom@netsign.com', 'weston@netsign.com']
-  spec.homepage    = 'https://github.com/whoojemaflip/zoom_event'
-  spec.summary     = 'Zoom webhook integration for Rails.'
-  spec.description = 'Zoom webhook integration for Rails.'
+  spec.homepage    = 'https://github.com/whoojemaflip/wistia_event'
+  spec.summary     = 'Wistia webhook integration for Rails.'
+  spec.description = 'Wistia webhook integration for Rails.'
   spec.license     = 'MIT'
 
   spec.files         = Dir['{app,config,lib}/**/*', 'LICENSE.md', 'README.md']

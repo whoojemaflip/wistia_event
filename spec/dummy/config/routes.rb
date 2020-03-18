@@ -1,5 +1,5 @@
-require 'zoom_event/engine'
+require 'wistia_event/engine'
 
 Rails.application.routes.draw do
-  mount ZoomEvent::Engine => '/zoom'
+  mount WistiaEvent::Engine => '/wistia'
 end

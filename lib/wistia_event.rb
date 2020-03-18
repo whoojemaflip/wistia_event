@@ -1,9 +1,9 @@
 require 'active_support/notifications'
-require 'zoom_event/version'
-require 'zoom_event/engine' if defined?(Rails)
+require 'wistia_event/version'
+require 'wistia_event/engine' if defined?(Rails)
 require 'json'
 
-module ZoomEvent
+module WistiaEvent
 
   class << self
     attr_accessor :adapter, :backend, :namespace
@@ -14,7 +14,10 @@ module ZoomEvent
     end
 
     def process(params)
-      instrument(params['event'], params['payload'])
+      events = params.fetch('events', [])
+      events.each do |event|
+        instrument(event['type'], event['payload'])
+      end
     end
 
     def instrument(event, payload)
@@ -53,6 +56,6 @@ module ZoomEvent
 
   self.adapter = NotificationAdapter
   self.backend = ActiveSupport::Notifications
-  self.namespace = Namespace.new('zoom_event', '.')
+  self.namespace = Namespace.new('wistia_event', '.')
 
 end
