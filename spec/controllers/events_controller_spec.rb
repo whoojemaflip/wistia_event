@@ -14,7 +14,7 @@ RSpec.describe WistiaEvent::EventsController, type: :controller do
 
   context 'with valid event params' do
     describe 'POST create' do
-      let(:params) { {wistia_events: webhook_example_events('media_updated')} }
+      let(:params) { webhook_example_events('media_updated') }
 
       it 'returns status 200' do
         post :create, params: params
@@ -22,8 +22,7 @@ RSpec.describe WistiaEvent::EventsController, type: :controller do
       end
 
       it 'calls WistiaEvent.process' do
-        allow(WistiaEvent).to receive(:process).and_return(true)
-        expect(WistiaEvent).to receive(:process)
+        expect(WistiaEvent).to receive(:process).and_return(true)
         post :create, params: params
       end
     end

@@ -14,7 +14,7 @@ module WistiaEvent
     private
 
     def permitted_params
-      params.permit(:event, payload: {}).to_h
+      params.permit(events: [:type, payload: {}]).to_h
     end
   end
 end
